@@ -20,17 +20,35 @@
     <style>
         body {
             font-family: 'Noto Sans SC',ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+            background: url('https://img-cdn.haozi.xyz/2022/02/14/599829e600a0f72474a8d904484dceda.jpg');
+            background-position: bottom center;
+            background-repeat: none;
+            background-size: cover;
+        }
+        #bg-relay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(255,255,255,0.72);
+            backdrop-filter: blur(1.2px);
+            z-index: -1;
+        }
+        .aplayer.aplayer-fixed .aplayer-lrc {
+            text-shadow: none;
         }
     </style>
   </head>
   <body ondragstart="return false;" class="w-full min-h-screen flex justify-center items-center select-none">
     <div id="container" class="">
+        <div id="bg-relay"></div>
         <div id="app" class="text-center">
             <div class="flex w-full justify-center items-center">
                 <a href="javascript:;" target="_blank"><img src="./linlijian_avatar.svg" class="w-12 md:w-16" /></a>
                 <div style="font-family: 'Zhi Mang Xing', cursive;" class="text-4xl md:text-6xl ml-6 md:ml-8 text-black font-semibold">林力建</div>
             </div>
-            <div style="font-family: 'Zhi Mang Xing', cursive;" class="flex w-full justify-center items-center py-4 text-gray-400 md:text-xl">
+            <div style="font-family: 'Zhi Mang Xing', cursive;" class="flex w-full justify-center items-center py-4 text-gray-600 md:text-xl">
                 正宗意大利关闭技术&nbsp;&nbsp;永不停息的宇宙之声
             </div>
             <div class="flex w-full justify-start mt-4">
@@ -39,12 +57,13 @@
                     <div class="border-l-4 border-gray-300 hover:border-gray-500 px-2 py-2 md:px-4 md:py-3 mb-2 md:mb-4 md:text-lg font-semibold"><a href="javascript:openDialog('/data/works.md','代表作品');">代表作品&nbsp;&nbsp;Works</a></div>
                     <div class="border-l-4 border-gray-300 hover:border-gray-500 px-2 py-2 md:px-4 md:py-3 mb-2 md:mb-4 md:text-lg font-semibold"><a href="javascript:openDialog('/data/announcement.md','必须旗帜鲜明地反对臭鱼烂虾');">必须旗帜鲜明地反对臭鱼烂虾</a></div>
                     <div class="border-l-4 border-blue-200 hover:border-blue-400 px-2 py-2 md:px-4 mb-2 md:mb-4 text-sm font-semibold"><a href="javascript:ap.toggle();">点击左下角，在线欣赏大师作品。</a></div>
+                    <!--<div class="border-l-4 border-blue-200 hover:border-blue-400 px-2 py-2 md:px-4 mb-2 md:mb-4 text-sm font-semibold"><a href="javascript:;">加入宇宙之声 QQ 粉丝群</a></div>-->
                 </div>
             </div>
             <!--<div class="flex justify-center mt-4"></div>-->
         </div>
-        <div id="footer" class="mt-4 text-xs text-gray-400 opacity-75 flex">
-            <span>&copy; 2022</span><div class="pl-2">林力建高雅声乐研究会 <button class="text-black" onclick="openDialog('/data/staff.md','关于本站')">STAFF</button><br /><span class="hidden md:block">Lin Lijian Elegant Vocal Music Research Society</span></div>.
+        <div id="footer" class="mt-4 text-xs text-gray-600 flex">
+            <span>&copy; 2022</span><div class="pl-2">林力建高雅声乐研究会 <a href="//github.com/liyanqwq/linlijian.top" class="text-black">GitHub</a> <button class="text-black" onclick="openDialog('/data/staff.md','关于本站')">STAFF</button><br /><span class="hidden md:block">Lin Lijian Elegant Vocal Music Research Society</span></div>.
         </div>
     </div>
     <div id="aplayer"></div>
@@ -61,6 +80,7 @@
     <script src="https://cdn.jsdelivr.net/npm/markdown-it@12.3.2/dist/markdown-it.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
     <script>
+        console.log('服务器没防御，中国人不打中国人。');
         var md = window.markdownit({html: true});
         var audios = new Array();
         const ap = new APlayer({
