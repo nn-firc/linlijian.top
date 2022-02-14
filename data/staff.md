@@ -11,7 +11,7 @@
     </tr>
     <tr>
         <td>鸣谢</td>
-        <td><a href="javascript:;">林力建高雅声乐研究会</a></td>
+        <td><a href="https://jq.qq.com/?_wv=1027&k=H7LulAbT">林力建高雅声乐研究会</a></td>
     </tr>
     <!--<tr>-->
     <!--    <td></td>-->
