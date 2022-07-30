@@ -115,7 +115,7 @@
         });
         var contentDialog = new mdui.Dialog('#content-dialog');
         async function openDialog(url, title){
-            $.get(url, function(res){
+            $.get(url+"?ver=20220730001", function(res){
                 $('#dialog-content').html(md.render(res));
                 contentDialog.open();
             });
